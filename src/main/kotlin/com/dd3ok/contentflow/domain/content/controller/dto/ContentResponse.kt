@@ -1,4 +1,4 @@
-package com.dd3ok.contentflow.domain.content.controller.response
+package com.dd3ok.contentflow.domain.content.controller.dto
 
 import com.dd3ok.contentflow.domain.content.repository.ContentStatus
 import java.time.LocalDateTime

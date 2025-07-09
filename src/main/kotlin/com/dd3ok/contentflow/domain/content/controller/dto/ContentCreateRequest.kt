@@ -1,4 +1,4 @@
-package com.dd3ok.contentflow.domain.content.controller.request
+package com.dd3ok.contentflow.domain.content.controller.dto
 
 data class ContentCreateRequest(
     val title: String,

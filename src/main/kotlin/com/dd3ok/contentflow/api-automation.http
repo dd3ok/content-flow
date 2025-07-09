@@ -1,0 +1,50 @@
+### 자동화 요청 생성(요약)
+POST http://localhost:8080/api/v1/automations
+Content-Type: application/json
+
+{
+  "sourceContentId": "CONTENT_ID",
+  "type": "SUMMARY"
+}
+
+> {%
+    client.global.set("automationId", response.body.id);
+%}
+
+
+###
+
+### 전체 자동화 요청 조회
+GET http://localhost:8080/api/v1/automations
+
+###
+
+### 타입별 자동화 요청 조회
+GET http://localhost:8080/api/v1/automations/type/SUMMARY
+
+###
+
+### 특정 콘텐츠의 자동화 요청 조회
+GET http://localhost:8080/api/v1/automations/content/CONTENT_ID
+
+###
+
+### 자동화 요청 단건 조회
+GET http://localhost:8080/api/v1/automations/{{automationId}}
+
+###
+
+### 자동화 요청 상태/결과 갱신
+PUT http://localhost:8080/api/v1/automations/{{automationId}}
+Content-Type: application/json
+
+{
+  "status": "SUCCESS",
+  "result": "여기에 자동 생성된 데이터(요약/썸네일/번역 등)",
+  "finishedAt": "2025-07-09T20:00:00"
+}
+
+###
+
+### 자동화 요청 삭제
+DELETE http://localhost:8080/api/v1/automations/{{automationId}}

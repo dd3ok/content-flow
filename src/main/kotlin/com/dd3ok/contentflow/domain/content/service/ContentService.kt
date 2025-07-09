@@ -1,8 +1,8 @@
 package com.dd3ok.contentflow.domain.content.service
 
-import com.dd3ok.contentflow.domain.content.controller.request.ContentCreateRequest
-import com.dd3ok.contentflow.domain.content.controller.request.ContentUpdateRequest
-import com.dd3ok.contentflow.domain.content.controller.response.ContentResponse
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentCreateRequest
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentUpdateRequest
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentResponse
 import com.dd3ok.contentflow.domain.content.repository.Content
 import com.dd3ok.contentflow.domain.content.repository.ContentRepository
 import com.dd3ok.contentflow.domain.content.repository.ContentStatus
@@ -52,4 +52,13 @@ class ContentService(
 
     fun deleteContent(id: String): Mono<Void> =
         contentRepository.deleteById(id)
+
+    fun getContentsByAuthor(authorId: Long): Flux<ContentResponse> =
+        contentRepository.findAllByAuthorId(authorId)
+            .map { it.toResponse() }
+
+    fun getContentsByStatus(status: ContentStatus): Flux<ContentResponse> =
+        contentRepository.findAllByStatus(status)
+            .map { it.toResponse() }
+
 }

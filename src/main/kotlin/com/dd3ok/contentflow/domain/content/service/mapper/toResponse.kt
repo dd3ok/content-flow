@@ -1,7 +1,7 @@
 package com.dd3ok.contentflow.domain.content.service.mapper
 
 import com.dd3ok.contentflow.domain.content.repository.Content
-import com.dd3ok.contentflow.domain.content.controller.response.ContentResponse
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentResponse
 
 fun Content.toResponse(): ContentResponse =
     ContentResponse(

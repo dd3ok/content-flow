@@ -1,8 +1,9 @@
 package com.dd3ok.contentflow.domain.content.controller
 
-import com.dd3ok.contentflow.domain.content.controller.request.ContentCreateRequest
-import com.dd3ok.contentflow.domain.content.controller.response.ContentResponse
-import com.dd3ok.contentflow.domain.content.controller.request.ContentUpdateRequest
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentCreateRequest
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentResponse
+import com.dd3ok.contentflow.domain.content.controller.dto.ContentUpdateRequest
+import com.dd3ok.contentflow.domain.content.repository.ContentStatus
 import com.dd3ok.contentflow.domain.content.service.ContentService
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -42,4 +43,12 @@ class ContentController(
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: String): Mono<Void> =
         contentService.deleteContent(id)
+
+    @GetMapping("/author/{authorId}")
+    fun getByAuthorId(@PathVariable authorId: Long): Flux<ContentResponse> =
+        contentService.getContentsByAuthor(authorId)
+
+    @GetMapping("/status/{status}")
+    fun getByStatus(@PathVariable status: ContentStatus): Flux<ContentResponse> =
+        contentService.getContentsByStatus(status)
 }

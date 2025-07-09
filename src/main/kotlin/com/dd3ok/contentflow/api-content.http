@@ -42,3 +42,15 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/v1/contents/{{contentId}}
 
 ###
+
+@authorId = 1001
+
+### 작성자별 콘텐츠 목록 조회
+GET http://localhost:8080/api/v1/contents/author/{{authorId}}
+
+###
+
+### 상태별 콘텐츠 목록 조회 (예: PUBLISHED)
+GET http://localhost:8080/api/v1/contents/status/PUBLISHED
+
+###

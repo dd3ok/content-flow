@@ -1,0 +1,42 @@
+### 메타 생성(태그)
+POST http://localhost:8080/api/v1/metas
+Content-Type: application/json
+
+{
+  "name": "캐주얼",
+  "type": "TAG"
+}
+
+> {%
+    client.global.set("metaId", response.body.id);
+%}
+
+###
+
+### 메타 전체 조회
+GET http://localhost:8080/api/v1/metas
+
+###
+
+### 타입별 메타 조회
+GET http://localhost:8080/api/v1/metas/type/TAG
+
+###
+
+### 메타 단건 조회(생성된 id로 치환)
+GET http://localhost:8080/api/v1/metas/{{metaId}}
+
+###
+
+### 메타 수정
+PUT http://localhost:8080/api/v1/metas/{{metaId}}
+Content-Type: application/json
+
+{
+  "name": "수정된 태그명"
+}
+
+###
+
+### 메타 삭제
+DELETE http://localhost:8080/api/v1/metas/{{metaId}}
