@@ -11,6 +11,7 @@ data class Automation(
     val sourceContentId: String,      // 원본 콘텐츠 id
     val type: AutomationType,
     val status: AutomationStatus = AutomationStatus.PENDING,
+    val authorId: Long,
     val result: String? = null,       // 생성된 요약문, 썸네일 주소, 번역 결과 등
     val requestedAt: LocalDateTime = LocalDateTime.now(),
     val finishedAt: LocalDateTime? = null,
