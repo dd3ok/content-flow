@@ -11,6 +11,7 @@ fun Content.toResponse(): ContentResponse =
         authorId = this.authorId,
         status = this.status,
         tags = this.tags,
+        assetIds = this.assetIds,
         createdAt = this.createdAt,
         updatedAt = this.updatedAt,
         version = this.version

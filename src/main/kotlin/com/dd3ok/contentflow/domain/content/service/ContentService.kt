@@ -22,6 +22,7 @@ class ContentService(
             body = request.body,
             authorId = request.authorId,
             tags = request.tags,
+            assetIds = request.assetIds ?: emptyList(),
             status = ContentStatus.DRAFT,
             createdAt = LocalDateTime.now(),
             updatedAt = LocalDateTime.now(),
@@ -44,6 +45,7 @@ class ContentService(
                     title = request.title ?: existing.title,
                     body = request.body ?: existing.body,
                     tags = request.tags ?: existing.tags,
+                    assetIds = request.assetIds ?: existing.assetIds,
                     updatedAt = LocalDateTime.now(),
                     version = existing.version + 1
                 )

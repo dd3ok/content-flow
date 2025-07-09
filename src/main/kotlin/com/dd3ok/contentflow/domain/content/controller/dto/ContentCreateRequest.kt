@@ -4,5 +4,6 @@ data class ContentCreateRequest(
     val title: String,
     val body: String,
     val authorId: Long,
-    val tags: List<String> = emptyList()
+    val tags: List<String> = emptyList(),
+    val assetIds: List<String>? = null
 )

@@ -13,6 +13,7 @@ data class Content(
     val authorId: Long,
     val status: ContentStatus = ContentStatus.DRAFT,
     val tags: List<String> = emptyList(),
+    val assetIds: List<String> = emptyList(),
     val createdAt: LocalDateTime = LocalDateTime.now(),
     val updatedAt: LocalDateTime = LocalDateTime.now(),
     val version: Int = 1
