@@ -31,6 +31,14 @@ dependencies {
     // Jackson Module for Kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    // Google Genai
+    implementation("com.google.genai:google-genai:1.8.0")
+
+    // cloudinary - Image, Media, Asset
+    implementation("com.cloudinary:cloudinary-http5:2.0.0")
+    implementation("com.cloudinary:cloudinary-taglib:2.0.0")
+    implementation("io.github.cdimascio:dotenv-java:2.2.4")
+
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")

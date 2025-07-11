@@ -5,7 +5,6 @@ import com.dd3ok.contentflow.domain.automation.controller.dto.AutomationResponse
 import com.dd3ok.contentflow.domain.automation.controller.dto.AutomationUpdateRequest
 import com.dd3ok.contentflow.domain.automation.repository.Automation
 import com.dd3ok.contentflow.domain.automation.repository.AutomationRepository
-import com.dd3ok.contentflow.domain.automation.repository.AutomationStatus
 import com.dd3ok.contentflow.domain.automation.repository.AutomationType
 import com.dd3ok.contentflow.domain.automation.service.event.AutomationCreatedEvent
 import com.dd3ok.contentflow.domain.automation.service.mapper.toResponse

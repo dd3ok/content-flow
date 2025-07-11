@@ -10,4 +10,10 @@ server:
   port: 8080
 
 file:
-  upload-dir: ./uploads
+  upload-url: "cloudinary://${CLOUDINARY_KEY}:${CLOUDINARY_SECRET}@${CLOUDINARY_NAME}"
+
+gemini:
+  api:
+    key: ${GEMINI_API_KEY}
+  model:
+    name: "gemini-2.5-flash-lite-preview-06-17"
